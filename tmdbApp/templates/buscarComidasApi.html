@@ -1,0 +1,24 @@
+<h1>Buscar Comidas na API TheMealDB</h1>
+<form method="get">
+	<input type="text" name="termo" value="{{ termo }}" placeholder="Digite o nome da comida">
+	<button type="submit">Buscar</button>
+</form>
+
+{% if comidas_api %}
+	<ul>
+		{% for comida in comidas_api %}
+			<li>
+				<strong>{{ comida.strMeal }}</strong> ({{ comida.strCategory }})<br>
+				<img src="{{ comida.strMealThumb }}" alt="{{ comida.strMeal }}" width="100"><br>
+				<em>{{ comida.strArea }}</em><br>
+				<details>
+					<summary>Instruções</summary>
+					<p>{{ comida.strInstructions }}</p>
+				</details>
+			</li>
+		{% endfor %}
+	</ul>
+{% elif termo %}
+	<p>Nenhum resultado encontrado.</p>
+{% endif %}
+<a href="{% url 'listar_comidas' %}">Voltar</a>

@@ -1,0 +1,14 @@
+<h1>Lista de Comidas</h1>
+<a href="{% url 'adicionar_comida' %}">Adicionar Comida</a>
+<a href="{% url 'buscar_comidas_api' %}">Buscar na API</a>
+<ul>
+	{% for comida in comidas %}
+		<li>
+			{{ comida.nome }} ({{ comida.categoria }})
+			<a href="{% url 'editar_comida' comida.id %}">Editar</a>
+			<a href="{% url 'deletar_comida' comida.id %}">Deletar</a>
+		</li>
+	{% empty %}
+		<li>Nenhuma comida cadastrada.</li>
+	{% endfor %}
+</ul>

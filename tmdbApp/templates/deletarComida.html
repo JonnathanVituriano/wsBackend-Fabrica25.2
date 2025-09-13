@@ -1,0 +1,7 @@
+<h1>Deletar Comida</h1>
+<p>Tem certeza que deseja deletar {{ comida.nome }}?</p>
+<form method="post">
+	{% csrf_token %}
+	<button type="submit">Confirmar</button>
+</form>
+<a href="{% url 'listar_comidas' %}">Cancelar</a>
