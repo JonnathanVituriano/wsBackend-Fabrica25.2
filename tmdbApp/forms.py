@@ -6,7 +6,6 @@ class CategoriaForm(forms.ModelForm):
         model = Categoria
         fields = ["nome"]
 
-class ComidaForm(forms.ModelForm):
-    class Meta:
-        model = Comida
-        fields = ["id", "nome", "categoria", "area", "instrucoes", "imagem"]
+
+class ComidaNomeForm(forms.Form):
+    nome = forms.CharField(label="Nome da comida", max_length=200)
