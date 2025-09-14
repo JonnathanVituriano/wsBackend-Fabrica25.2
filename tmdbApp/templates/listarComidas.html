@@ -1,10 +1,19 @@
+{% load static %}
+<link rel="stylesheet" href="{% static 'tmdbApp/style.css' %}">
+
 <h1>Lista de Comidas</h1>
-<a href="{% url 'adicionar_comida' %}">Adicionar Comida</a>
-<a href="{% url 'buscar_comidas_api' %}">Buscar na API</a>
-<ul>
+<div class="menu-links">
+	<a href="{% url 'adicionar_comida' %}">Adicionar Comida</a>
+	<a href="{% url 'adicionar_categoria' %}">Adicionar Categoria</a>
+	<a href="{% url 'buscar_comidas_api' %}">Buscar na API</a>
+</div>
+<ul class="comidas-lista">
 	{% for comida in comidas %}
 		<li>
-			{{ comida.nome }} ({{ comida.categoria }})
+			<strong>{{ comida.nome }}</strong> ({{ comida.categoria }})<br>
+			{% if comida.imagem %}
+				<img src="{{ comida.imagem }}" alt="{{ comida.nome }}" width="120"><br>
+			{% endif %}
 			<a href="{% url 'editar_comida' comida.id %}">Editar</a>
 			<a href="{% url 'deletar_comida' comida.id %}">Deletar</a>
 		</li>

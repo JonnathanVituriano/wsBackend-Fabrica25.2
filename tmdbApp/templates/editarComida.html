@@ -1,7 +1,14 @@
+{% load static %}
+<link rel="stylesheet" href="{% static 'tmdbApp/style.css' %}">
+
 <h1>Editar Comida</h1>
 <form method="post">
 	{% csrf_token %}
 	{{ form.as_p }}
-	<button type="submit">Salvar</button>
+	<button type="submit">Buscar e Atualizar</button>
 </form>
+{% if comida.imagem %}
+	<p>Imagem atual:</p>
+	<img src="{{ comida.imagem }}" alt="{{ comida.nome }}" width="120">
+{% endif %}
 <a href="{% url 'listar_comidas' %}">Voltar</a>

@@ -1,0 +1,86 @@
+body {
+    background: orange;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.menu-links {
+    margin-bottom: 30px;
+}
+.menu-links a {
+    margin-right: 20px;
+    text-decoration: none;
+    color: #222;
+    font-weight: bold;
+    font-size: 1.1em;
+    transition: color 0.2s;
+}
+.menu-links a:hover {
+    color: #fff;
+    background: #d35400;
+    padding: 4px 10px;
+    border-radius: 5px;
+}
+.menu-links a:visited {
+    color: #222;
+}
+
+.comidas-lista {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    list-style: none;
+    padding: 0;
+}
+.comidas-lista li {
+    background: #fff3e0;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px #0001;
+    padding: 18px 20px;
+    min-width: 220px;
+    max-width: 250px;
+    text-align: center;
+}
+.comidas-lista img {
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+button, input[type="submit"] {
+    background: #e67e22;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 8px 18px;
+    font-size: 1em;
+    cursor: pointer;
+    margin-top: 10px;
+}
+button:hover, input[type="submit"]:hover {
+    background: #d35400;
+}
+
+form {
+    margin-bottom: 20px;
+}
+
+h1 {
+    margin-top: 0;
+    padding-top: 20px;
+}
+
+a {
+    text-decoration: none;
+    color: #222;
+    transition: color 0.2s;
+}
+a:hover {
+    color: #fff;
+    background: #d35400;
+    border-radius: 5px;
+    padding: 2px 8px;
+}
+a:visited {
+    color: #222;
+}

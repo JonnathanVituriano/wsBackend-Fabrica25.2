@@ -1,3 +1,6 @@
+{% load static %}
+<link rel="stylesheet" href="{% static 'tmdbApp/style.css' %}">
+
 <h1>Deletar Comida</h1>
 <p>Tem certeza que deseja deletar {{ comida.nome }}?</p>
 <form method="post">
